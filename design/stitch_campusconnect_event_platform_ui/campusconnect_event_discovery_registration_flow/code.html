@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CampusConnect - Explore Events</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c8c4d8",
+            "on-secondary-fixed": "#002113",
+            "error": "#ba1a1a",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#c74e3e",
+            "primary-fixed": "#e4dfff",
+            "tertiary": "#a63628",
+            "primary-fixed-dim": "#c5c0ff",
+            "primary": "#5442de",
+            "outline": "#787586",
+            "primary-container": "#6d5ef8",
+            "on-error": "#ffffff",
+            "inverse-surface": "#233144",
+            "surface-container-high": "#dce9ff",
+            "surface-tint": "#5543df",
+            "inverse-primary": "#c5c0ff",
+            "secondary-fixed": "#6ffbbe",
+            "background": "#f8f9ff",
+            "on-surface": "#0d1c2e",
+            "surface-variant": "#d5e3fc",
+            "inverse-on-surface": "#eaf1ff",
+            "on-primary-fixed-variant": "#3c22c7",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#d5e3fc",
+            "on-error-container": "#93000a",
+            "surface-dim": "#ccdbf3",
+            "on-tertiary-fixed": "#410000",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#ffb4a8",
+            "tertiary-fixed": "#ffdad4",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container": "#e6eeff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#872015",
+            "on-tertiary-container": "#fffeff",
+            "on-primary-fixed": "#140067",
+            "secondary-container": "#6cf8bb",
+            "surface-container-low": "#eff4ff",
+            "on-background": "#0d1c2e",
+            "on-secondary-container": "#00714d",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary-container": "#ffffff",
+            "surface": "#f8f9ff",
+            "on-surface-variant": "#474555",
+            "secondary": "#006c49"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.5rem",
+            "space-sm": "1rem",
+            "gutter": "1.5rem",
+            "space-md": "1.5rem",
+            "space-lg": "2rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "label-caps": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "display-hero-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "display-hero": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar Component -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm w-full sticky top-0 z-50">
+<div class="w-full px-margin flex items-center justify-between h-16 max-w-7xl mx-auto">
+<!-- Left: Logo -->
+<a class="text-headline-sm font-headline-sm text-on-surface dark:text-inverse-on-surface flex items-center gap-space-xs tracking-tight" href="#">
+<span>CampusConnect</span>
+<span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span>
+</a>
+<!-- Middle: Navigation Links -->
+<nav class="hidden md:flex items-center gap-space-md h-full">
+<!-- Active Nav: Explore Events -->
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary font-label-lg text-label-lg h-full flex items-center pt-1 transition-all duration-200 ease-in-out" href="#">
+          Explore Events
+        </a>
+<!-- Inactive Nav: My Registrations -->
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface font-label-lg text-label-lg h-full flex items-center pt-1 transition-colors transition-all duration-200 ease-in-out" href="#">
+          My Registrations
+        </a>
+</nav>
+<!-- Right: Secondary Trailing Action / Student Pill -->
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center gap-space-xs pl-2 pr-3 py-1.5 rounded-full border border-outline-variant bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center font-bold shadow-xs">
+            S
+          </div>
+<span class="hidden sm:inline font-label-md text-label-md text-on-surface">student1@campus.edu</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow max-w-7xl w-full mx-auto px-margin py-space-lg">
+<!-- Header Hero Section -->
+<div class="mb-space-lg">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant mb-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Spring Semester 2025</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight mb-2">
+        Find your next campus experience.
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+        Discover student hackathons, tech workshops, guest lectures, and club meetups across campus.
+      </p>
+</div>
+<!-- Search & Filter Toolbar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-md shadow-sm mb-space-lg space-y-space-md">
+<!-- Search Input Bar -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all" placeholder="Search events by name, club, or topic..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+<span class="hidden sm:inline font-label-caps text-label-caps bg-surface-container px-2 py-0.5 rounded text-on-surface-variant border border-outline-variant">⌘K</span>
+</div>
+</div>
+<!-- Filter Chips Row -->
+<div class="flex items-center gap-space-xs flex-wrap pt-1 border-t border-outline-variant/50">
+<span class="font-label-md text-label-md text-on-surface-variant mr-1">Categories:</span>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-3.5 py-1.5 rounded-full shadow-xs transition-colors">
+          All
+        </button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md px-3.5 py-1.5 rounded-full transition-colors">
+          AI
+        </button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md px-3.5 py-1.5 rounded-full transition-colors">
+          Robotics
+        </button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md px-3.5 py-1.5 rounded-full transition-colors">
+          Open Source
+        </button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md px-3.5 py-1.5 rounded-full transition-colors">
+          Design &amp; UI
+        </button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md px-3.5 py-1.5 rounded-full transition-colors">
+          Cybersecurity
+        </button>
+</div>
+</div>
+<!-- 3-Column Event Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: AI Build Night -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An energetic university hackathon venue filled with students coding collaboratively on laptops. Futuristic glowing artificial intelligence code visualizations and vibrant purple violet ambient lighting illuminate the modern university laboratory space. Clean light-mode architectural framing with deep violet accent lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxVnnoA_h46mk-8JM2Vmn2OP5pL8bfRLbAymec0FUJBNBmID-5eVnJDmIUCSvKPeAdp1FSZpRMC1Iq5RcQbWSn341H6rVABXq2xTmB5cSC85HFaD4vp0Z4yu2XyfqeFuuZILy9aW5VAqyBaERRWg6gbDwz2GuHYPKc6eFDCIdvJP8n1C6atsBsr-4FQBBDDAidyeE20TK2PQNgs8FHP-D0bVaeetaC6wjYpcvn4tA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-2.5 py-1 rounded-full border border-outline-variant shadow-xs">
+            Artificial Intelligence
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Apr 12, 2025</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-tertiary-fixed text-tertiary">
+                8 seats left
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 line-clamp-1">AI Build Night</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md mb-4">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="location_on">location_on</span>
+<span>Main Seminar Hall</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Free Entry</span>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-4 py-2 rounded-lg transition-colors flex items-center gap-1">
+              View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Autonomous Rover Workshop -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A modern campus engineering robotics laboratory displaying autonomous motorized rovers and circuit hardware prototypes on clean wooden workbenches. Well-lit clean scientific workspace with high clarity, subtle violet and emerald indicators on testing screens, and engineering tools neatly arranged." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0CAg1UMxPj6dglDAdDrOKMD7LqOfb-E69ly4jjlSnwnDaZkKuc8nEpoToR4HViQbZn4Qm56VTqemnhvfaiObmrVjB6ca5zxeVDiLi82FTNOdyv1JDQcu5xPiyFc5ze7gVkgfJF7X6GCcVB_jrbWBNIt0OYgs-hnfm8Guk14EltYpQC4YvJ3rBAHfceKw0u5RVtvRaIgqhcsGeM_H3QhcdFUxmxofqXOZpzW7E0o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-2.5 py-1 rounded-full border border-outline-variant shadow-xs">
+            Robotics Club
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Apr 15, 2025</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-tertiary-fixed text-tertiary">
+                3 seats left
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 line-clamp-1">Autonomous Rover Workshop</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md mb-4">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="location_on">location_on</span>
+<span>Engineering Lab B-12</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Hardware Provided</span>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-4 py-2 rounded-lg transition-colors flex items-center gap-1">
+              View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Open Source Spring Sprint -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Students gathered around a collaborative workstation in an airy campus innovation atrium contributing to software repositories. Natural morning sunlight floods through tall windows onto contemporary minimalist modular desks, highlighted by violet brand stickers and modern digital monitors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtJdQsy9Z0crhYOWahQpseg6ulJPv1kimQ4DSppHerqt1b_vnTLew6yAGimai8Aa79h0B_tAsRSxKz_HdcUm2_8bCSwvN8Njxcr-25zSIQXF-IwnFmQFXx7lD4fWxy_PPWB8cbPvJ5y2t8W2hw78akd1sh6q7zsDXGWTa8WaD5_vSUZaf42bJz7IuhiQGzWF33buI_jpuInLS561MpudQiC5B7Rkg5iMwSaWZykfc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-2.5 py-1 rounded-full border border-outline-variant shadow-xs">
+            Open Source
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Apr 19, 2025</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-secondary">
+                24 seats left
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 line-clamp-1">Open Source Spring Sprint</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md mb-4">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="location_on">location_on</span>
+<span>Student Innovation Center</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Beginner Friendly</span>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-4 py-2 rounded-lg transition-colors flex items-center gap-1">
+              View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Design Systems for Engineers -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An aesthetically refined presentation slide demonstrating UI components and layout tokens displayed in a crisp modern campus lecture amphitheater. The interior is minimal and sleek with clean slate seating and subtle violet glow framing the speaker's display panel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1HGQUcRtR9K9muPLwg5soPtFjMIVdHD6tQlcsolITk6dMjjIzG_y9zao56Q9CnbBCv2blRNkS-FLCvI9ClFFQ6yct8yIClWP70T64o7eqIKnmVTvx8m6yu75ctM9K2sBsfUtrkE5rfxqkrRjXyQO0HrrODZRHc9IPAwZ84-XNU-pdN96Q_k3N6TuiWvaMXIqqReUgMQLQwHa-ev3KXAVKQUV-NO74HnWM4yj_kZA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-2.5 py-1 rounded-full border border-outline-variant shadow-xs">
+            UI / UX
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Apr 22, 2025</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-container text-on-surface-variant">
+                15 seats left
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 line-clamp-1">Design Systems for Engineers</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md mb-4">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="location_on">location_on</span>
+<span>Auditorium C</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Figma &amp; React</span>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-4 py-2 rounded-lg transition-colors flex items-center gap-1">
+              View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 5: Campus Hackathon 2025 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An expansive university union ballroom packed with dynamic collegiate teams building prototype software products on stage and tables. Cheerful collegiate atmosphere with soft daylight, violet event banners hanging from the ceiling, and modern student presentations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBund_XBKDsyRkpR9SS8LFTOqfQpBGmXVs2umaut_1ic1hdWthd828vJLHupCn6kDm-YGJkwqNntTh1lXSwXTqcQyHd0SmUrDArbV1RG4PRjjVois1Kdp-VqzpUZtlTm0kOqpRzd4IM0vEzAA54l197slVNeMWj_5rLpgs7GHVqv9xAXyJcnFS9XZab634USUu0i9vl_Y7FRRaZlD_6b1rrpRXcchN5_KL9qY23Flk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-2.5 py-1 rounded-full border border-outline-variant shadow-xs">
+            Hackathon Flagship
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Apr 26-27, 2025</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-secondary">
+                Registration Open
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 line-clamp-1">Campus Hackathon 2025</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md mb-4">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="location_on">location_on</span>
+<span>Student Union Ballroom</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">36 Hours · $5K Prizes</span>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-4 py-2 rounded-lg transition-colors flex items-center gap-1">
+              View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 6: Quantum Computing Intro -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An advanced university physics laboratory lecture hall with illuminated chalkboard formulas and quantum circuit diagrams projected on digital smart boards. Clean minimalist architectural setting with subtle ambient violet lighting and engaged university scholars." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWMfr48joLzp1nI8Rs29gcoT6INoFLcl_axi7vopoorvlyFA_VfYT5l6Fx86tU0LIicq3ITXnKS0bZyArxm0_OZ292SLaw3w7nCI3AWdNQpo9rk0LPTEinL8D5RBpneK5G9Z3BAbH6hJSMNGzSV3Fy5qcik7dha7-9R-pgiTbyGYPNybl0fmJCDMzzqBTApGGOuEachq2v5BTSszq4qCESmVfzcfKzMgq6x6kx2LU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-2.5 py-1 rounded-full border border-outline-variant shadow-xs">
+            Physics &amp; CS
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">May 02, 2025</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-container-highest text-on-surface-variant">
+                Sold Out / Waitlist
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 line-clamp-1">Quantum Computing Intro</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md mb-4">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="location_on">location_on</span>
+<span>Hall 401</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Waitlist Active</span>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg px-4 py-2 rounded-lg border border-outline-variant transition-colors flex items-center gap-1">
+              Join Waitlist <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline mt-space-xl">
+<div class="w-full py-space-md px-margin flex flex-col md:flex-row justify-between items-center gap-space-sm max-w-7xl mx-auto">
+<div class="flex items-center gap-space-xs">
+<span class="text-headline-sm font-headline-sm text-on-surface dark:text-inverse-on-surface">CampusConnect</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant">
+          © 2025 CampusConnect. Collegiate Event Discovery Platform.
+        </span>
+</div>
+<nav class="flex items-center gap-space-md flex-wrap justify-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-label-md text-label-md transition-colors" href="#">
+          Campus Guidelines
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-label-md text-label-md transition-colors" href="#">
+          Privacy Policy
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-label-md text-label-md transition-colors" href="#">
+          Event Support
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-label-md text-label-md transition-colors" href="#">
+          Terms of Service
+        </a>
+</nav>
+</div>
+</footer>
+</body></html>

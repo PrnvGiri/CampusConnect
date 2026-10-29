@@ -1,0 +1,49 @@
+Create a modern, clean web app UI in Figma for "CampusConnect" (a campus event discovery and registration platform).
+
+Use these design tokens:
+- Primary Brand Color: Violet (#6D5EF8)
+- Background Color: Light Slate/White (#F8FAFC)
+- Primary Text Color: Dark Navy (#111827)
+- Secondary Text Color: Slate (#475569)
+- Success Color: Emerald Green (#10B981)
+- Danger/Warning Accent: Coral (#F97360)
+- Spacing: 8px grid (8px, 16px, 24px, 32px)
+- Border Radius: 12px for cards, 8px for buttons
+
+Please design 4 responsive screens/frames:
+
+1. Navigation Bar (Top across all pages):
+   - Left: Logo "CampusConnect" (bold Navy text)
+   - Middle links: "Explore Events", "My Registrations"
+   - Right: User avatar icon & student email pill ("student1@campus.edu")
+
+2. Screen 1: Event Catalog ("Explore Events")
+   - Header: "Find your next campus experience."
+   - Search bar: With search icon ("Search events...")
+   - Category filter chips: "All", "AI", "Robotics", "Open Source"
+   - Event Cards Grid (3 columns):
+     * Card top: Event banner image / icon
+     * Card body: Event title (e.g. "AI Build Night"), Date ("Apr 12, 2025"), Location ("Main Seminar Hall"), Seats badge ("8 seats left")
+     * Card bottom: Primary button "View Details →"
+
+3. Screen 2: Event Details ("AI Build Night")
+   - Breadcrumb: Explore Events > AI Build Night
+   - Title: "AI Build Night"
+   - Key facts badges in a row: Date (12 Nov), Time (5:00 PM), Location (Main Campus), Capacity ("8 seats left")
+   - Description text paragraph
+   - Primary Call-To-Action Button with 3 states shown side-by-side or stacked:
+     * State A (Default): Violet button "Register Now"
+     * State B (Event Full): Disabled gray button "Event Full" with Coral alert badge "Registration is full"
+     * State C (Already Registered): Green outline button "✓ Registered"
+
+4. Screen 3: Registration Confirmation & "My Registrations"
+   - Success Card:
+     * Large green checkmark icon
+     * Heading: "You're Registered for AI Build Night!"
+     * Status pill: "Confirmed"
+     * Action button: "Go to My Registrations"
+   - My Registrations List below:
+     * List of registered event cards with title, date, and green "Registered" badge.
+
+Make all components modular, clean, and developer-ready with clear visual hierarchy.
+
