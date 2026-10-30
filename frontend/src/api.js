@@ -3,7 +3,7 @@
 // Connects React UI to the FastAPI Backend (Day 1 Workshop)
 // ============================================================
 
-const API_BASE_URL = "http://127.0.0.1:8000/api";
+const API_BASE_URL = "https://campus-connect-alpha-nine.vercel.app/api";
 
 // Seeded test student ID from Slide 47 & 53
 export const CURRENT_STUDENT_ID = "22222222-2222-2222-2222-222222222222";
@@ -13,10 +13,10 @@ export const CURRENT_STUDENT_EMAIL = "student1@campus.edu";
  * FR-02: Browse all events (optional search filter)
  */
 export async function getEvents(search = "") {
-  const url = search 
-    ? `${API_BASE_URL}/events?search=${encodeURIComponent(search)}` 
+  const url = search
+    ? `${API_BASE_URL}/events?search=${encodeURIComponent(search)}`
     : `${API_BASE_URL}/events`;
-    
+
   const res = await fetch(url);
   if (!res.ok) throw new Error("Failed to fetch events");
   return await res.json();
